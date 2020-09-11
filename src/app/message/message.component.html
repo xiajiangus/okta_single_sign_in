@@ -1,0 +1,43 @@
+<h1 class="ui header">
+  <i aria-hidden="true" class="mail outline icon"></i> Create Message
+</h1>
+<div *ngIf="failed" class="ui error message">
+  <div class="content">
+    <div class="header">Failed to create message. Please verify the following:</div>
+    <ul class="list">
+      <li class="content">You've resource server running on port 8000.</li>
+      <li class="content">Your resource server example is using the same Okta authorization server (issuer) that you have configured this Angular
+        application to use.</li>
+    </ul>
+  </div>
+</div>
+
+<div *ngIf="messages.length">
+  <p>This component makes a POST request to the resource server, which must be running at
+    <code>localhost:8000/api/message</code>
+  </p>
+  <p>It attaches your current access token in the
+    <code>Authorization</code> header on the request, and the resource server will attempt to authenticate this access token. If the token is valid
+    the server will return the newly created message. If the token is not valid or the resource server is incorrectly configured,
+    you will see a 401
+    <code>Unauthorized response</code>.</p>
+  <p>This route is protected with the
+    <code>OktaAuthGuard</code> component, which will ensure that this page cannot be accessed until you have authenticated and have an access token
+    in local storage.</p>
+
+  <p><B>The following message has been created:</B> </p>
+  <table class="ui table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="message-{{messages.length}}">
+        <td>{{messages[messages.length-1].date}}</td>
+        <td>{{messages[messages.length-1].text}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

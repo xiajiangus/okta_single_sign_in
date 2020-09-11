@@ -1,0 +1,16 @@
+<h1 class="ui header">Simple Message App with Sign In Widget</h1>
+<div *ngIf="!isAuthenticated">
+  <br><br>
+  <button id="login-button" class="ui primary button" role="button" routerLink="/login">Login</button>
+</div>
+
+<div *ngIf="isAuthenticated && userName">
+  <p>Welcome back, {{ userName }}!</p>
+  <p>
+    You have successfully authenticated against your Okta org, and have been redirected back to this application.  You now have an ID Token and access token in local storage.
+    Visit the <a href="/profile">My Profile</a> page to take a look inside the ID Token.
+  </p>
+  
+  <p>You can use the access token to authenticate yourself against a simple REST API which can <a href="/message">Create Message</a> and <a href="/messages">Get Messages</a> </p>
+
+</div>
