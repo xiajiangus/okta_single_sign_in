@@ -42,7 +42,7 @@ CLIENT_ID=123xxxxx123
 Now start the app server:
 
 ```
-ng serve
+ng serve --host 0.0.0.0 --disableHostCheck true
 ```
 
 >  **Note:** If you're on a windows machine, you might get an error similar to
