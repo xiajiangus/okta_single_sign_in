@@ -1,4 +1,4 @@
-# Okta Angular + Custom Login Example
+# Okta Angular + Custom Login 
 
 This example shows you how to use the [Okta Angular Library][] to login a user to an Angular application.  The login is achieved with the [Okta Sign In Widget][], which gives you more control to customize the login experience within your app.
 
@@ -17,8 +17,8 @@ Before running this sample, you will need the following:
 To run this application, you first need to clone this repo and then enter into this directory:
 
 ```bash
-git clone https://github.com/okta/samples-js-angular.git
-cd samples-js-angular/custom-login
+git clone https://github.com/xiajiangus/okta_single_sign_in.git
+cd okta_single_sign_in
 ```
 
 Then install dependencies:
