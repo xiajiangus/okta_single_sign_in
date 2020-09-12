@@ -1,15 +1,11 @@
 # Okta Angular + Custom Login 
 
-This example shows you how to use the [Okta Angular Library][] to login a user to an Angular application.  The login is achieved with the [Okta Sign In Widget][], which gives you more control to customize the login experience within your app.
-
-This example is built with [Angular CLI][].
-
 ## Prerequisites
 
 Before running this sample, you will need the following:
 
 * An Okta Developer Account, you can sign up for one at https://developer.okta.com/signup/.
-* An Okta Application, configured for Singe-Page App (SPA) mode. This is done from the Okta Developer Console and you can find instructions [here][OIDC SPA Setup Instructions].  When following the wizard, use the default properties.  They are are designed to work with our sample applications.
+* An Okta Application, configured for Singe-Page App (SPA) mode. This is done from the Okta Developer Console and you can find instructions [here][OIDC SPA Setup Instructions].  When following the wizard, use the default properties.  They are designed to work with this applications.
 
 
 ## Running This Example
@@ -62,7 +58,8 @@ You can login with the same account that you created when signing up for your De
 
 ## Integrating The Resource Server
 
-This sample contains the same "Messages" page that is included in the [Okta Hosted Login](/okta-hosted-login) sample, please refer to that sample for instructions on setting up the resource server.
+This app can work with the following resource server:
+https://github.com/xiajiangus/nodejs-server
 
 [Angular CLI]: https://cli.angular.io/
 [Okta Angular Library]: https://github.com/okta/okta-oidc-js/tree/master/packages/okta-angular
