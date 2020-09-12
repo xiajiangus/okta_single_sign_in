@@ -15,6 +15,7 @@ import { OktaAuthService } from '@okta/okta-angular';
 import { HttpClient } from '@angular/common/http';
 
 import sampleConfig from '../app.config';
+import { Navigation, Router } from '@angular/router';
 
 interface Message {
   date: string;
@@ -29,14 +30,22 @@ interface Message {
 export class MessageComponent implements OnInit {
   failed: Boolean;
   messages: Array<Message> [];
+  inputText: any;
+  // navigation: Navigation;
 
-  constructor(public oktaAuth: OktaAuthService, private http: HttpClient) {
+  constructor(public oktaAuth: OktaAuthService, private http: HttpClient, private router: Router) {
     this.messages = [];
+    const navigation = this.router.getCurrentNavigation();
+    const state = navigation.extras.state;
+    this.inputText= state.message;
+    
+    //const message = state.message;
+    console.log(this.inputText); // log the message in console
   }
 
   async ngOnInit() {
     const accessToken = await this.oktaAuth.getAccessToken();
-    this.http.post<any>('http://localhost:8000/api/message', { text: 'New Message' }, {
+    this.http.post<any>('http://localhost:8000/api/message', { text: this.inputText.textMessage }, {
       headers: {
         Authorization: 'Bearer ' + accessToken,
       }

@@ -1,0 +1,12 @@
+<h1 class="ui header">
+    <i aria-hidden="true" class="mail outline icon"></i> Create Message Form
+</h1>
+<form [formGroup]="messageFormGroup" (ngSubmit)="onSubmit()">
+    <label>
+        Message:
+    </label>
+    <div>
+        <textarea formControlName="textMessage" id="" cols="30" rows="10"></textarea>
+    </div>
+    <button class="btn btn-primary" (Click)="onSubmit()">Send!</button>
+</form>

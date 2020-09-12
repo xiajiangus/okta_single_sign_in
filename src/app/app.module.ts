@@ -36,6 +36,8 @@ import { LoginComponent } from './login/login.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageComponent } from './message/message.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FormComponent } from './form/form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {
@@ -65,6 +67,11 @@ const appRoutes: Routes = [
     component: MessageComponent,
     canActivate: [ OktaAuthGuard ],
   },
+  {
+    path: 'form',
+    component: FormComponent,
+    canActivate: [ OktaAuthGuard ],
+  },
 ];
 
 @NgModule({
@@ -75,12 +82,14 @@ const appRoutes: Routes = [
     MessagesComponent,
     MessageComponent,
     LoginComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     OktaAuthModule,
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: OKTA_CONFIG, useValue: oktaConfig },
